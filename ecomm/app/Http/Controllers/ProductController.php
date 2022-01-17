@@ -39,8 +39,12 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function delete($id)
     {
+        $result=Product::where('id',$id)->delete();
+        if($result){
+            return ["result"=>"product has been delete"];
+        }
         //
     }
 
